@@ -1,2 +1,1 @@
-# LandingAP
-.
+# grupAPly
