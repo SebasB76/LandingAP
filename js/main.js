@@ -66,7 +66,7 @@ function renderEventCard(ev) {
           : `<span class="w-11 h-11 rounded-lg bg-brand-100 text-brand-600 flex items-center justify-center">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">${iconFor(ev.type)}</svg>
             </span>`}
-        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-50 text-brand-700">${escapeHtml(ev.type) || "Evento"}</span>
+        <span class="mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-brand-50 text-brand-700">${escapeHtml(ev.type) || "Evento"}</span>
       </div>
       <h3 class="text-lg font-bold text-slate-900">${escapeHtml(ev.title)}</h3>
       <p class="mt-2 text-sm text-slate-600 flex-grow">${escapeHtml(ev.description)}</p>
@@ -116,7 +116,7 @@ function renderFilters() {
     const classes = isActive
       ? "bg-brand-600 text-white border-brand-600"
       : "bg-white text-slate-600 border-slate-300 hover:border-brand-600 hover:text-brand-600";
-    return `<button data-filter="${type}" class="px-4 py-1.5 rounded-full text-sm font-medium border transition ${classes}">${type}</button>`;
+    return `<button data-filter="${type}" class="mono px-4 py-1.5 rounded-full text-xs uppercase tracking-wider border transition ${classes}">${type}</button>`;
   }).join("");
 
   eventsFilters.querySelectorAll("button").forEach((btn) => {

@@ -11,6 +11,10 @@ section {
   scroll-margin-top: 4rem;
 }
 
+body {
+  font-feature-settings: "ss01", "cv01";
+}
+
 ::selection {
   background-color: var(--brand);
   color: #ffffff;
@@ -34,18 +38,44 @@ section {
   background: var(--brand);
 }
 
-.text-gradient {
-  background: linear-gradient(120deg, var(--brand), #34d399);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+.bg-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -12px -12px;
+}
+
+.eyebrow {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: var(--brand);
+}
+
+.mono {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+}
+
+.marker {
+  background-image: linear-gradient(transparent 60%, rgba(16, 185, 129, 0.3) 60%);
+  background-repeat: no-repeat;
+  padding: 0 0.1em;
 }
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.is-visible {
@@ -53,23 +83,8 @@ section {
   transform: none;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-22px);
-  }
-}
-
-.animate-float {
-  animation: float 7s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .animate-float {
-    animation: none;
+  .reveal {
     transition: none;
     opacity: 1;
     transform: none;
